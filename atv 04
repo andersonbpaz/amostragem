@@ -1,17 +1,5 @@
-# Bootstrapping
-set.seed(1000)
-
-#replicando a amostra
-bootsDistNormal10 <- replicate(10, sample(distNormalSimulacao, 10, replace = TRUE))
-bootsDistNormal10
-
-#calculando estatística
-mediaBootsNormal10 <- replicate(10, mean(sample(distNormalSimulacao, 10, replace = TRUE)))
-mediaBootsNormal50 <- replicate(50, mean(sample(distNormalSimulacao, 10, replace = TRUE)))
-mediaBootsNormal100 <- replicate(100, mean(sample(distNormalSimulacao, 10, replace = TRUE)))
-
-#comparando
-mean(mediaBootsNormal10)
-mean(mediaBootsNormal50)
-mean(mediaBootsNormal100)
-mean(distNormal)
+distNormal <- rnorm(100)
+#amostra
+sample(distNormal, 10, replace = TRUE)
+#bootstraping
+bootTeste <- replicate(15, sample(distNormal, 10, replace = TRUE))
